@@ -3,6 +3,6 @@ FactoryBot.define do
     word { "MyString" }
     definition { "MyText" }
     example_sentence { "MyString" }
-    submission { nil }
+    submission
   end
 end
