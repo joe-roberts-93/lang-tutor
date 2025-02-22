@@ -13,7 +13,9 @@ module LlmClients
           "grammatical_questions": "<grammatical_questions>"
         }
         The analysis should be an overall summary of corrections and feedback for the language learner based on the text.
-        The analysis need not describe the text, just provide actionable linguistic feedback appropriate to the perceived level of the learner.
+        The analysis need not describe the text or provide feedback on the content, just provide actionable linguistic feedback appropriate to the perceived level of the learner.
+        The feedback doesn't need to reassure the learner, but should be constructive and actionable.
+        If you make a substition suggestion, explain why the original word or phrase was incorrect.
         The flashcards should be an array of fewer than 25 flashcards, each with the structure:
         {
           "word": "<word>",

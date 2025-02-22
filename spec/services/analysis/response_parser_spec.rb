@@ -34,4 +34,9 @@ RSpec.describe Analysis::ResponseParser do
     expect(parsed_response).to include(:analysis, :flashcards, :questions)
     expect(parsed_response[:analysis]).to eq("Test analysis")
   end
+
+  it "raises error if required keys are missing" do
+    response = { "analysis" => "Test analysis" }
+    expect { described_class.new(response).parse }.to raise_error("Missing keys: flashcards, grammatical_questions")
+  end
 end
