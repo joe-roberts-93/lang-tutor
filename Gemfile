@@ -48,4 +48,4 @@ group :development, :test do
 
 end
 
-gem "langchainrb", "~> 0.19.3"
+gem "langchainrb", "~> 0.19.4"
