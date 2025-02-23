@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe Analysis::ResponseParser do
   let(:response) do
     {
-      "analysis" => "Test analysis",
+      "feedback" => "Test feedback",
       "flashcards" => [],
       "grammatical_questions" => []
     }
@@ -12,8 +12,8 @@ RSpec.describe Analysis::ResponseParser do
   subject(:parsed_response) { described_class.new(response).parse }
 
   it "returns parsed response" do
-    expect(subject).to include(:analysis, :flashcards, :questions)
-    expect(subject[:analysis]).to eq("Test analysis")
+    expect(subject).to include(:feedback, :flashcards, :questions)
+    expect(subject[:feedback]).to eq("Test feedback")
   end
 
   it "returns flashcards" do
@@ -29,14 +29,14 @@ RSpec.describe Analysis::ResponseParser do
   end
 
   it "removes markdown from response" do
-    response = "```json\n{\"analysis\":\"Test analysis\",\"flashcards\":[],\"grammatical_questions\":[]}\n```"
+    response = "```json\n{\"feedback\":\"Test feedback\",\"flashcards\":[],\"grammatical_questions\":[]}\n```"
     parsed_response = described_class.new(response).parse
-    expect(parsed_response).to include(:analysis, :flashcards, :questions)
-    expect(parsed_response[:analysis]).to eq("Test analysis")
+    expect(parsed_response).to include(:feedback, :flashcards, :questions)
+    expect(parsed_response[:feedback]).to eq("Test feedback")
   end
 
   it "raises error if required keys are missing" do
-    response = { "analysis" => "Test analysis" }
+    response = { "feedback" => "Test feedback" }
     expect { described_class.new(response).parse }.to raise_error("Missing keys: flashcards, grammatical_questions")
   end
 end

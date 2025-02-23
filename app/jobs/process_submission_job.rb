@@ -7,5 +7,6 @@ class ProcessSubmissionJob < ApplicationJob
     analysis_result.flashcards.each do |flashcard|
       Flashcard.create(flashcard.merge(submission_id: submission.id))
     end
+    submission.update!(feedback: analysis_result.feedback)
   end
 end
