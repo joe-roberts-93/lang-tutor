@@ -20,10 +20,10 @@ module LlmClients
         {
           "word": "<word>",
           "definition": "<definition>",
-          "synonyms": "<synonyms>"
+          "example": "<example>"
         }
         The definition should be a simple definition of the word in #{language} in fewer than 200 characters.
-        Synonyms should be a comma-separated list of synonyms for the word in #{language}. The definition should be simple, under 200 characters.
+        The example should be simple sentence or phrase containing the word, pitched at the user's level. The sentence or phrase should be fewer than 150 characters.
         Grammatical questions should be an array of 5 objects.
         Each of these objects should have the structure
           {

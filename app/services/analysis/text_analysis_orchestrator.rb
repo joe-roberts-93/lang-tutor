@@ -5,9 +5,10 @@ module Analysis
       @language = language
     end
 
-    def analyze
+    def process_submission
       response = TextAnalysisService.new(@text, @language).analyze
-      ResponseParser.new(response).parse
+      parsed_response = ResponseParser.new(response).parse
+      AnalysisResult.new(parsed_response)
     end
   end
 end
