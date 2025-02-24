@@ -9,7 +9,7 @@ module Flashcards
         {
           word: flashcard["word"],
           definition: flashcard["definition"],
-          synonyms: flashcard["synonyms"].split(", ")
+          example_sentence: flashcard["example"]
         }
       end
     end

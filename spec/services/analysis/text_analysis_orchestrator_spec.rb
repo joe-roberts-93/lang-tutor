@@ -5,14 +5,14 @@ RSpec.describe Analysis::TextAnalysisOrchestrator do
   let(:language) { "French" }
   let(:mock_response) do
     {
-      "analysis" => "Test analysis",
+      "feedback" => "Test analysis",
       "flashcards" => [],
       "grammatical_questions" => []
     }
   end
   let(:mock_parsed_response) do
     {
-      analysis: "Test analysis",
+      feedback: "Test analysis",
       flashcards: [],
       questions: []
     }
@@ -24,9 +24,16 @@ RSpec.describe Analysis::TextAnalysisOrchestrator do
     allow_any_instance_of(Analysis::ResponseParser).to receive(:parse).and_return(mock_parsed_response)
   end
 
-  it "returns parsed response" do
-    result = described_class.new(text, language).analyze
-    expect(result).to include(:analysis, :flashcards, :questions)
-    expect(result[:analysis]).to eq("Test analysis")
+  it "returns analysis result object" do
+    analysis_result = described_class.new(text, language).process_submission
+    expect(analysis_result).to be_an_instance_of(AnalysisResult)
   end
+
+  it "returns analysis result with feedback, flashcards, and questions attributes" do
+    analysis_result = described_class.new(text, language).process_submission
+    expect(analysis_result.feedback).to eq("Test analysis")
+    expect(analysis_result.flashcards).to eq([])
+    expect(analysis_result.questions).to eq([])
+  end
+
 end

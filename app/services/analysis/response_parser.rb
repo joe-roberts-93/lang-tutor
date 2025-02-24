@@ -8,7 +8,7 @@
 
       def parse
         {
-          analysis: @response["analysis"],
+          feedback: @response["feedback"],
           flashcards: Flashcards::FlashcardService.new(@response["flashcards"]).build,
           questions: Questions::GrammaticalQuestionsService.new(@response["grammatical_questions"]).build
         }
@@ -27,11 +27,11 @@
       end
 
       def remove_markdown(text)
-        text.gsub(/\A```json\s*|\s*```\z/, "")
+        text.strip.gsub(/\A```json\s*|\s*```\z/, "")
       end
 
       def validate_keys(response)
-        required_keys = %w[analysis flashcards grammatical_questions]
+        required_keys = %w[feedback flashcards grammatical_questions]
         missing_keys = required_keys - response.keys
         raise "Missing keys: #{missing_keys.join(", ")}" unless missing_keys.empty?
       end
