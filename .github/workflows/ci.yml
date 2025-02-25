@@ -18,6 +18,20 @@ jobs:
           ruby-version: 3.1.2
           bundler-cache: true
 
+      - name: Print Ruby and RubyGems version
+        run: |
+          ruby -v
+          gem -v
+
+      - name: Update RubyGems to latest version
+        run: gem update --system
+
+      - name: Print updated RubyGems version
+        run: gem -v
+
+      - name: Install Bundler
+        run: gem install bundler
+
       - name: Install dependencies
         run: bin/bundle install --jobs 4 --retry 3
 
