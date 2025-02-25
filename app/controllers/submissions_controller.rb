@@ -1,5 +1,4 @@
 class SubmissionsController < ApplicationController
-
   def create
     @submission = Submission.new(submission_params)
     if @submission.save

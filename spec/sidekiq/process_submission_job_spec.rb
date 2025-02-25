@@ -52,7 +52,7 @@ RSpec.describe ProcessSubmissionJob, type: :job do
         allow_any_instance_of(Analysis::TextAnalysisOrchestrator).to receive(:process_submission).and_return(
           AnalysisResult.new(
             feedback: "Test feedback",
-            flashcards: [{ "word" => "", "definition" => "", "example_sentence" => "" }], # Invalid data
+            flashcards: [ { "word" => "", "definition" => "", "example_sentence" => "" } ], # Invalid data
             questions: []
           )
         )

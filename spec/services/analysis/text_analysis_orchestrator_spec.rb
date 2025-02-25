@@ -35,5 +35,4 @@ RSpec.describe Analysis::TextAnalysisOrchestrator do
     expect(analysis_result.flashcards).to eq([])
     expect(analysis_result.questions).to eq([])
   end
-
 end

@@ -48,7 +48,6 @@ group :development, :test do
 
   gem "rspec-rails"
   gem "factory_bot_rails"
-
 end
 
 gem "langchainrb", "~> 0.19.3"
