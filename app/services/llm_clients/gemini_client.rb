@@ -1,7 +1,7 @@
 require_relative "llm_client"
 require_relative "prompt_builder"
 module LlmClients
-  class GeminiClient < LLMClient
+  class GeminiClient < LlmClient
     def initialize(api_key)
       @llm = Langchain::LLM::GoogleGemini.new(api_key: api_key)
     end
