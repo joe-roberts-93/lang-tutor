@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: bin/bundle install --jobs 4 --retry 3
 
+      - name: Check bundler cache directory
+        run: ls -lah vendor/bundle
+
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
 
