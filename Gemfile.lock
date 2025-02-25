@@ -279,6 +279,7 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
+    rubygems-update (3.6.5)
     securerandom (0.4.1)
     sidekiq (7.3.9)
       base64
@@ -333,6 +334,7 @@ DEPENDENCIES
   redis (>= 4.0.1)
   rspec-rails
   rubocop-rails-omakase
+  rubygems-update (>= 3.3.22)
   sidekiq
   sqlite3 (>= 1.4)
   tzinfo-data

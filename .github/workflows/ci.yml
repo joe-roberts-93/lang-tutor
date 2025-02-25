@@ -18,9 +18,6 @@ jobs:
           ruby-version: 3.1.2
           bundler-cache: true
 
-      - name: Update RubyGems
-        run: gem update --system
-
       - name: Install dependencies
         run: bin/bundle install --jobs 4 --retry 3
 
