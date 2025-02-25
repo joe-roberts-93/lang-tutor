@@ -16,27 +16,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1.2
+          rubygems: latest
           bundler-cache: true
-
-      - name: Print Ruby and RubyGems version
-        run: |
-          ruby -v
-          gem -v
-
-      - name: Update RubyGems to latest version
-        run: gem update --system
-
-      - name: Print updated RubyGems version
-        run: gem -v
-
-      - name: Install Bundler
-        run: gem install bundler
 
       - name: Install dependencies
         run: bin/bundle install --jobs 4 --retry 3
-
-      - name: Check bundler cache directory
-        run: ls -lah vendor/bundle
 
       - name: Scan for common Rails security vulnerabilities using static analysis
         run: bin/brakeman --no-pager
