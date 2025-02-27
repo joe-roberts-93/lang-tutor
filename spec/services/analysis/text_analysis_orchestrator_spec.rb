@@ -17,11 +17,11 @@
         questions: []
       }
     end
-    let(:mock_llm_client) { instance_double(LlmClients::GeminiClient, analyze: mock_response) }
+    let(:mock_text_analysis_service) { double("Analysis::TextAnalysisService", analyze: mock_response) }
 
     before do
       # This is a stub. It will return the same response every time. Isolates testing of the TextAnalysisOrchestrator class.
-      allow(LlmClients::GeminiClient).to receive(:new).and_return(mock_llm_client)
+      allow(Analysis::TextAnalysisService).to receive(:new).and_return(mock_text_analysis_service)
       allow_any_instance_of(Analysis::ResponseParser).to receive(:parse).and_return(mock_parsed_response)
     end
 
