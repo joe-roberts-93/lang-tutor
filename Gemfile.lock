@@ -117,6 +117,8 @@ GEM
     json (2.10.1)
     json-schema (4.3.1)
       addressable (>= 2.8)
+    jwt (2.10.1)
+      base64
     langchainrb (0.19.4)
       baran (~> 0.1.9)
       csv
@@ -323,6 +325,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  jwt (~> 2.10)
   langchainrb (~> 0.19.3)
   puma (>= 5.0)
   rails (~> 7.2.0)
@@ -335,4 +338,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.5.22
+   2.6.5
