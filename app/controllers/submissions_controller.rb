@@ -11,10 +11,7 @@ class SubmissionsController < ApplicationController
 
   def show
     @submission = Submission.find(params[:id])
-    analysis_result = TextAnalysisOrchestrator.new(@submission.text, @submission.language).process_submission
-    analysis_result.flashcards.each do |flashcard|
-      Flashcard.create(flashcard.merge(submission_id: @submission.id))
-    end
+    render json: @submission
   end
 
   private
