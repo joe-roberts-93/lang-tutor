@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   resources :users, only: [ :create, :show ]
-  resources :submissions, only: [ :create, :show ]
+  resources :submissions, only: [ :create, :show, :index ]
   resources :flashcards, only: [ :index, :show ]
   post "auth/login", to: "authentication#login"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

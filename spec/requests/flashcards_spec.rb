@@ -63,8 +63,4 @@ RSpec.describe "Flashcards", type: :request do
       end
     end
   end
-
-  def json
-    JSON.parse(response.body)
-  end
 end
