@@ -2,13 +2,12 @@ require 'rails_helper'
 include JsonWebToken
 
 RSpec.describe "Flashcards", type: :request do
-
   let(:user) { create(:user) }
   let(:token) { jwt_encode(user_id: user.id) }
   let(:headers) { { 'Authorization' => token } }
   let!(:flashcards) { create_list(:flashcard, 10, submission: create(:submission, user: user)) }
 
-  
+
 
   describe "GET /index" do
     it "returns http success" do
