@@ -12,7 +12,7 @@ class SubmissionsController < ApplicationController
 
   def show
     @submission = Submission.find(params[:id])
-    return render json: { error: "Unauthorized" }, status: :unauthorized unless @submission.user_id == @current_user.id
+    return render json: { errors: "Forbidden" }, status: :forbidden unless @submission.user_id == @current_user.id
 
     render json: @submission
   end

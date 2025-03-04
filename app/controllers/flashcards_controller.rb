@@ -6,7 +6,7 @@ class FlashcardsController < ApplicationController
 
   def show
     @flashcard = @current_user.flashcards.find_by(id: params[:id])
-    return render json: { error: "Unauthorized" }, status: :unauthorized unless @flashcard
+    return render json: { errors: "Forbidden" }, status: :forbidden unless @flashcard
     render json: @flashcard
   end
 end
