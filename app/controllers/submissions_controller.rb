@@ -17,6 +17,11 @@ class SubmissionsController < ApplicationController
     render json: @submission
   end
 
+  def index
+    @submissions = @current_user.submissions
+    render json: @submissions
+  end
+
   private
 
   def submission_params
