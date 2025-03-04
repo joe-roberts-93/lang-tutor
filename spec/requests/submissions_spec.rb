@@ -35,7 +35,7 @@ RSpec.describe "Submissions", type: :request do
       end
     end
     context "when user is authenticated" do
-      submission_params = { { text: "This is a test submission", language: "English" } }
+      submission_params = { text: "This is a test submission", language: "English" }
       it "creates a new submission" do
         post "/submissions", params: { submission: submission_params }, headers: headers
         expect(response).to have_http_status(:created)
