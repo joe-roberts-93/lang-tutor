@@ -43,6 +43,9 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+      JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
 
     # services:
     #  redis:
