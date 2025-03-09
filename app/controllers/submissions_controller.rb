@@ -2,6 +2,10 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     @submission.user_id = @current_user.id
+    if @submission.title.blank?
+      time = Time.now
+      @submission.title = "Submission from #{time.strftime("%a %e %b")} at #{time.strftime("%l:%M %p")}"
+    end
     if @submission.save
       ProcessSubmissionJob.perform_later(@submission.id)
       render json: @submission, status: :created
