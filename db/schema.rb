@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_23_155844) do
+ActiveRecord::Schema[7.2].define(version: 2025_03_09_002417) do
   create_table "flashcards", force: :cascade do |t|
     t.string "word"
     t.text "definition"
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_02_23_155844) do
     t.datetime "updated_at", null: false
     t.string "language"
     t.text "feedback"
+    t.string "title"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
 
