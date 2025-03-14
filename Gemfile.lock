@@ -276,7 +276,7 @@ GEM
       rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
-    rubygems-update (3.6.5)
+    rubygems-update (3.6.6)
     securerandom (0.4.1)
     sidekiq (7.3.9)
       base64
