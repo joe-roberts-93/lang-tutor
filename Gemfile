@@ -50,6 +50,6 @@ group :development, :test do
   gem "factory_bot_rails"
 end
 
-gem "langchainrb", "~> 0.19.3"
+gem "langchainrb", "~> 0.19.5"
 
 gem "jwt", "~> 2.10"
